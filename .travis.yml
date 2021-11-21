@@ -1,6 +1,0 @@
-jobs:
-  include:
-    - stage: publish openshif client in dockerhub
-      script: "docker build -t openshift-client ."
-      after_success:
-        - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
