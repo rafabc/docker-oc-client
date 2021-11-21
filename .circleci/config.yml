@@ -9,12 +9,9 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
       - run: 
           name: "Login to docker hub"
-          command: docker login -u "$DOCKERHUB_USER" -p "$DOCKERHUB_PASS"         
+          command: docker login -u="$DOCKERHUB_USER" -p="$DOCKERHUB_PASS" hub.docker.com      
       - run: 
           name: "Build docker image"
           command: docker build -t openshift-client:4.6 .
