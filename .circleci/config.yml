@@ -14,10 +14,10 @@ jobs:
           command: docker login --username "$DOCKERHUB_USER" --password "$DOCKERHUB_PASSWORD"      
       - run: 
           name: "Build docker image"
-          command: docker build -t openshift-client:4.6 .
+          command: docker build -t rafabc/openshift-client:4.6 .
       - run: 
           name: "Publish docker image"
-          command: push openshift-client:4.6
+          command: docker push rafabc/openshift-client:4.6
 
 
 # Invoke jobs via workflows
