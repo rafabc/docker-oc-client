@@ -12,8 +12,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: |
-         echo "$DOCKERHUB_PASS" | docker login --username $DOCKERHUB_USER --password-stdin          
+      - run: docker login -u $DOCKERHUB_USER -p "$DOCKERHUB_PASS         
       - run: docker build -t openshift-client:4.6 .
       - run: docker push openshift-client:4.6
 
